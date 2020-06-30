@@ -12,6 +12,9 @@ namespace AnimationAttempt
 {
     public partial class Form1 : Form
     {
+        Graphics g;
+        Player player = new Player();
+
         public Form1()
         {
             InitializeComponent();
@@ -19,7 +22,9 @@ namespace AnimationAttempt
 
         private void Canvas_Paint(object sender, PaintEventArgs e)
         {
+            g = e.Graphics;
 
+            player.DrawPlayer(g);
         }
     }
 }
