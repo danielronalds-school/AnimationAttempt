@@ -22,6 +22,8 @@ namespace AnimationAttempt
         public Image standingStillImage = Properties.Resources.standing;
 
         private int animationPhase = 0;
+        private int animationDelay = 10;
+        private int animationCurrentDelay = 0;
 
         public int playerSpeed = 1;
 
@@ -31,7 +33,7 @@ namespace AnimationAttempt
             y = 380;
             width = 40;
             height = 40;
-            playerImage = Properties.Resources.standing;
+            playerImage = Properties.Resources.walk_right_2;
             playerRec = new Rectangle(x, y, width, height);
         }
 
@@ -71,6 +73,16 @@ namespace AnimationAttempt
                     animationPhase = 0;
                 }
                 playerImage = movingRightAnimations[animationPhase];
+            }
+
+            if (animationCurrentDelay == animationDelay)
+            {
+                animationCurrentDelay = 0;
+                animationPhase++;
+            }
+            else
+            {
+                animationCurrentDelay++;
             }
         }
 

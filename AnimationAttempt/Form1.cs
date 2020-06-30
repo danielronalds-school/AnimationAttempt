@@ -16,7 +16,7 @@ namespace AnimationAttempt
         Graphics g;
         Player player = new Player();
 
-        bool playerLeft, playerRight;
+        public bool playerLeft, playerRight;
 
         public Form1()
         {
@@ -28,7 +28,6 @@ namespace AnimationAttempt
         private void Canvas_Paint(object sender, PaintEventArgs e)
         {
             g = e.Graphics;
-
             player.DrawPlayer(g);
         }
 
