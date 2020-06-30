@@ -36,10 +36,12 @@ namespace AnimationAttempt
             switch(e.KeyCode)
             {
                 case Keys.Left:
+                case Keys.A:
                     playerLeft = true;
                     break;
 
                 case Keys.Right:
+                case Keys.D:
                     playerRight = true;
                     break;
             }
@@ -50,10 +52,12 @@ namespace AnimationAttempt
             switch (e.KeyCode)
             {
                 case Keys.Left:
+                case Keys.A:
                     playerLeft = false;
                     break;
 
                 case Keys.Right:
+                case Keys.D:
                     playerRight = false;
                     break;
             }

@@ -22,10 +22,10 @@ namespace AnimationAttempt
         public Image standingStillImage = Properties.Resources.standing;
 
         private int animationPhase = 0;
-        private int animationDelay = 10;
+        private int animationDelay = 7;
         private int animationCurrentDelay = 0;
 
-        public int playerSpeed = 1;
+        public int playerSpeed = 2;
         public bool facingLeft = false;
 
         public Player()
