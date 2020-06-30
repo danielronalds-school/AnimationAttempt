@@ -30,11 +30,11 @@ namespace AnimationAttempt
 
         public player_two()
         {
-            x = 10;
+            x = 600;
             y = 380;
             width = 40;
             height = 40;
-            playerImage = Properties.Resources.walk_right_2;
+            playerImage = Properties.Resources.walk_left_2;
             playerRec = new Rectangle(x, y, width, height);
         }
 

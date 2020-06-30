@@ -15,8 +15,10 @@ namespace AnimationAttempt
     {
         Graphics g;
         Player player = new Player();
+        player_two player2 = new player_two();
 
         public bool playerLeft, playerRight;
+        public bool player2Left, player2Right;
 
         public Form1()
         {
@@ -29,20 +31,30 @@ namespace AnimationAttempt
         {
             g = e.Graphics;
             player.DrawPlayer(g, playerMoving());
+            player2.DrawPlayer(g, player2Moving());
         }
 
         private void Form1_KeyDown(object sender, KeyEventArgs e)
         {
             switch(e.KeyCode)
             {
-                case Keys.Left:
                 case Keys.A:
                     playerLeft = true;
                     break;
 
-                case Keys.Right:
                 case Keys.D:
                     playerRight = true;
+                    break;
+            }
+
+            switch (e.KeyCode)
+            {
+                case Keys.Left:
+                    player2Left = true;
+                    break;
+
+                case Keys.Right:
+                    player2Right = true;
                     break;
             }
         }
@@ -51,14 +63,23 @@ namespace AnimationAttempt
         {
             switch (e.KeyCode)
             {
-                case Keys.Left:
                 case Keys.A:
                     playerLeft = false;
                     break;
 
-                case Keys.Right:
                 case Keys.D:
                     playerRight = false;
+                    break;
+            }
+
+            switch (e.KeyCode)
+            {
+                case Keys.Left:
+                    player2Left = false;
+                    break;
+
+                case Keys.Right:
+                    player2Right = false;
                     break;
             }
         }
@@ -74,12 +95,32 @@ namespace AnimationAttempt
             {
                 player.MovePlayer(false);
             }
+
+            if (player2Left)
+            {
+                player2.MovePlayer(true);
+
+            }
+            else if (player2Right)
+            {
+                player2.MovePlayer(false);
+            }
+
             Canvas.Invalidate();
         }
 
         private bool playerMoving()
         {
             if(playerLeft || playerRight)
+            {
+                return true;
+            }
+            return false;
+        }
+
+        private bool player2Moving()
+        {
+            if (player2Left || player2Right)
             {
                 return true;
             }
