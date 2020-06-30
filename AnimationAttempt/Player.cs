@@ -50,9 +50,29 @@ namespace AnimationAttempt
             {
                 x += playerSpeed;
             }
+            updateAnimation(Left);
             playerRec.Location = new Point(x, y);
         }
 
+        public void updateAnimation(bool Left)
+        {
+            if (Left)
+            {
+                if (animationPhase == 3)
+                {
+                    animationPhase = 0;
+                }
+                playerImage = movingLeftAnimations[animationPhase];
+            }
+            else
+            {
+                if (animationPhase == 3)
+                {
+                    animationPhase = 0;
+                }
+                playerImage = movingRightAnimations[animationPhase];
+            }
+        }
 
     }
 }
