@@ -18,6 +18,8 @@ namespace AnimationAttempt
 
         public bool playerLeft, playerRight;
 
+        List<Projectile> projectile = new List<Projectile>();
+
         public Form1()
         {
             InitializeComponent();
@@ -29,6 +31,11 @@ namespace AnimationAttempt
         {
             g = e.Graphics;
             player.DrawPlayer(g, playerMoving());
+            foreach (Projectile m in projectile)
+            {
+                m.drawProjectile(g);
+                m.moveProjectile(g);
+            }
         }
 
         private void Form1_KeyDown(object sender, KeyEventArgs e)
@@ -45,6 +52,9 @@ namespace AnimationAttempt
                     playerRight = true;
                     break;
             }
+
+
+            if (e.KeyData == Keys.Space) { projectile.Add(new Projectile(player.playerRec)); }
         }
 
         private void Form1_KeyUp(object sender, KeyEventArgs e)

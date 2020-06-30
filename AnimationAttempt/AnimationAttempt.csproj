@@ -52,6 +52,7 @@
     <Compile Include="Form1.Designer.cs">
       <DependentUpon>Form1.cs</DependentUpon>
     </Compile>
+    <Compile Include="Projectile.cs" />
     <Compile Include="Player.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -101,6 +102,12 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\walk_right_3.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\missile.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\plasmabolt.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
