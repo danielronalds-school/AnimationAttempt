@@ -13,16 +13,27 @@ namespace AnimationAttempt
 
         private int projectileSpeed = 5;
 
+        bool projectileDirectionLeft;
+
         public Image projectileImage;
 
         public Rectangle projectileRec;
 
-        public Projectile(Rectangle playerRec)
+        public Player player = new Player();
+
+        public Projectile(Rectangle playerRec, bool Left)
         {
             x = 10;
             y = 380;
             width = 60;
             height = 30;
+
+            projectileDirectionLeft = Left;
+
+            if(Left)
+            {
+                width = -60;
+            }
 
             x = playerRec.X + playerRec.Width / 2;
             y = playerRec.Y;//+ playerRec.Height;
@@ -40,7 +51,13 @@ namespace AnimationAttempt
 
         public void moveProjectile(Graphics g)
         {
-            x += projectileSpeed;
+            if (projectileDirectionLeft)
+            {
+                x -= projectileSpeed;
+            } else
+            {
+                x += projectileSpeed;
+            }
             projectileRec.Location = new Point(x, y);
         }
 

@@ -54,7 +54,7 @@ namespace AnimationAttempt
             }
 
 
-            if (e.KeyData == Keys.Space) { projectile.Add(new Projectile(player.playerRec)); }
+            if (e.KeyData == Keys.Space) { projectile.Add(new Projectile(player.playerRec, player.facingLeft)); }
         }
 
         private void Form1_KeyUp(object sender, KeyEventArgs e)
