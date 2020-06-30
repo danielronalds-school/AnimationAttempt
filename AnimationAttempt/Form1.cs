@@ -28,7 +28,7 @@ namespace AnimationAttempt
         private void Canvas_Paint(object sender, PaintEventArgs e)
         {
             g = e.Graphics;
-            player.DrawPlayer(g);
+            player.DrawPlayer(g, playerMoving());
         }
 
         private void Form1_KeyDown(object sender, KeyEventArgs e)
@@ -43,8 +43,6 @@ namespace AnimationAttempt
                     playerRight = true;
                     break;
             }
-            Console.WriteLine("Player left = " + playerLeft);
-            Console.WriteLine("Player Right = " + playerRight);
         }
 
         private void Form1_KeyUp(object sender, KeyEventArgs e)
@@ -73,6 +71,15 @@ namespace AnimationAttempt
                 player.MovePlayer(false);
             }
             Canvas.Invalidate();
+        }
+
+        private bool playerMoving()
+        {
+            if(playerLeft || playerRight)
+            {
+                return true;
+            }
+            return false;
         }
     }
 }

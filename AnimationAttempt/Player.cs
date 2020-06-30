@@ -26,6 +26,7 @@ namespace AnimationAttempt
         private int animationCurrentDelay = 0;
 
         public int playerSpeed = 1;
+        public bool facingLeft = false;
 
         public Player()
         {
@@ -37,8 +38,19 @@ namespace AnimationAttempt
             playerRec = new Rectangle(x, y, width, height);
         }
 
-        public void DrawPlayer(Graphics g)
+        public void DrawPlayer(Graphics g, bool moving)
         {
+            if(!moving)
+            {
+                if(facingLeft)
+                {
+                    playerImage = movingLeftAnimations[1];
+                }
+                else
+                {
+                    playerImage = movingRightAnimations[1];
+                }
+            }
             g.DrawImage(playerImage, playerRec);
         }
 
@@ -84,6 +96,8 @@ namespace AnimationAttempt
             {
                 animationCurrentDelay++;
             }
+
+            facingLeft = Left;
         }
 
     }
