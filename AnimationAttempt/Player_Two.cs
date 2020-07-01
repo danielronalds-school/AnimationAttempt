@@ -15,9 +15,9 @@ namespace AnimationAttempt
 
         public Rectangle playerRec;
 
-        public Image[] movingLeftAnimations = new Image[3] { Properties.Resources.walk_left_1, Properties.Resources.walk_left_2, Properties.Resources.walk_left_3 };
+        public Image[] movingLeftAnimations = new Image[3] { Properties.Resources.player2_walk_left_1, Properties.Resources.player2_walk_left_2, Properties.Resources.player2_walk_left_3 };
 
-        public Image[] movingRightAnimations = new Image[3] { Properties.Resources.walk_right_1, Properties.Resources.walk_right_2, Properties.Resources.walk_right_3 };
+        public Image[] movingRightAnimations = new Image[3] { Properties.Resources.player2_walk_right_1, Properties.Resources.player2_walk_right_2, Properties.Resources.player2_walk_right_3 };
 
         public Image standingStillImage = Properties.Resources.standing;
 
@@ -34,7 +34,7 @@ namespace AnimationAttempt
             y = 380;
             width = 40;
             height = 40;
-            playerImage = Properties.Resources.walk_left_2;
+            playerImage = Properties.Resources.player2_walk_left_2;
             playerRec = new Rectangle(x, y, width, height);
         }
 
