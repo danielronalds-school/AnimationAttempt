@@ -14,7 +14,8 @@ namespace AnimationAttempt
     public partial class Form1 : Form
     {
         Graphics g;
-        Player player = new Player();
+        Player player = new Player(10, 380);
+        Player player2 = new Player(300,380);
 
         public bool playerLeft, playerRight;
 
@@ -29,6 +30,7 @@ namespace AnimationAttempt
         {
             g = e.Graphics;
             player.DrawPlayer(g, playerMoving());
+            player2.DrawPlayer(g, playerMoving());
         }
 
         private void Form1_KeyDown(object sender, KeyEventArgs e)

@@ -28,10 +28,10 @@ namespace AnimationAttempt
         public int playerSpeed = 2;
         public bool facingLeft = false;
 
-        public Player()
+        public Player(int position_x, int position_y)
         {
-            x = 10;
-            y = 380;
+            x = position_x;// 10;
+            y = position_y;// 380;
             width = 40;
             height = 40;
             playerImage = Properties.Resources.walk_right_2;
